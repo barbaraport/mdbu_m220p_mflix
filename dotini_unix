@@ -1,0 +1,13 @@
+# Ticket: Connection
+# Rename this file to .ini after filling in your MFLIX_DB_URI and your SECRET_KEY
+# Do not surround the URI with quotes
+
+[PROD]
+SECRET_KEY =
+MFLIX_DB_URI =
+MFLIX_NS =
+
+[TEST]
+SECRET_KEY =
+MFLIX_DB_URI =
+MFLIX_NS =

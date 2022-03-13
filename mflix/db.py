@@ -204,7 +204,11 @@ def build_query_sort_project(filters):
 
             # TODO: Text and Subfield Search
             # Construct a query that will search for the chosen genre.
-            query = {}
+            query = {
+                "genres": {
+                    "$in": filters["genres"]
+                }
+            }
 
     return query, sort, project
 

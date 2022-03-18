@@ -163,10 +163,14 @@ def get_movies_faceted(filters, page, movies_per_page):
     # Add the necessary stages to the pipeline variable in the correct order.
     # pipeline.extend(...)
 
+    pipeline.append(skip_stage)
+    pipeline.append(limit_stage)
+    pipeline.append(facet_stage)
+
     try:
         movies = list(db.movies.aggregate(pipeline, allowDiskUse=True))[0]
-        count = list(db.movies.aggregate(counting, allowDiskUse=True))[
-            0].get("count")
+        count = list(db.movies.aggregate(counting, allowDiskUse=True))[0].get("count")
+
         return (movies, count)
     except OperationFailure:
         raise OperationFailure(

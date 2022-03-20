@@ -47,9 +47,10 @@ def get_db():
         MFLIX_DB_URI,
         # TODO: Connection Pooling
         # Set the maximum connection pool size to 50 active connections.
-        maxPoolSize = 50
+        maxPoolSize = 50,
         # TODO: Timeouts
         # Set the write timeout limit to 2500 milliseconds.
+        wtimeout = 2500
         )[MFLIX_DB_NAME]
     return db
 

@@ -385,7 +385,7 @@ def update_comment(comment_id, user_email, text, date):
     # Use the user_email and comment_id to select the proper comment, then
     # update the "text" and "date" of the selected comment.
     response = db.comments.update_one(
-        { "_id": comment_id, "email": user_email },
+        { "_id": ObjectId(comment_id), "email": user_email },
         { "$set": { "text": text, "date": date } }
     )
 

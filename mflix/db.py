@@ -302,7 +302,7 @@ def get_movie(id):
                             }
                         }
                     ],
-                    "as": "comments",
+                    "as": "comments"
                 }
             }
         ]
